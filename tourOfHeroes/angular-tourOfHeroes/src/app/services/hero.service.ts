@@ -12,6 +12,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HeroService {
+  //heroes: Hero[] =[];
+  //selectedHero?: Hero;
+ // heroObservable!: Subscription;
+  /*public getHeroe(id: string): Observable<Hero> {
+    return this.getHeroes().pipe(
+      map(heroes =>{     
+      return heroes.find(hero => hero.id === +id); 
+      })
+    );
+  }*/
 
   constructor(private messageService: MessageService,
     private http: HttpClient) { }
@@ -22,9 +32,10 @@ export class HeroService {
     
   }
 
-  getHeroById(id: number): Observable<Hero> {
+  public getHeroe(id: number): Observable<Hero> {
     return this.getHeroes().pipe(
       map(heroes => heroes.find(hero => hero.id === +id) as Hero)
     );
   }
+  
 }

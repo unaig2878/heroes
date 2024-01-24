@@ -6,11 +6,12 @@ import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../services/hero.service';
 import { MessageService } from '../services/message.service';
+import { HeroSearchComponentComponent } from '../hero-search-component/hero-search-component.component';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule],
+  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule, HeroSearchComponentComponent],
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
   providers: [HeroService]
@@ -32,7 +33,9 @@ export class HeroesComponent implements OnInit {
 
 
   public ngOnInit(): void {
-    this.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes=>{
+      this.heroes = heroes;
+    });
     }
 
   onSelect(hero: Hero): void {
