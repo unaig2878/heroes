@@ -5,11 +5,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeroesComponent, FormsModule, MessagesComponent,HttpClientModule],
+  imports: [CommonModule, RouterOutlet, HeroesComponent, FormsModule, MessagesComponent,HttpClientModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
