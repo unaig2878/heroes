@@ -1,0 +1,27 @@
+#search-component {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    color: #3f525c; 
+    margin-right: 10px;
+  }
+  
+  input#hero-search {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #3f525c; 
+    background-color: #3f525c;
+    border-radius: 15px; 
+    width: 300px; 
+    box-sizing: border-box;
+  }
+  
+  input#hero-search:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  }
+  

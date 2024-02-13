@@ -1,8 +1,21 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+<div *ngIf="hero" class="wiki-style">
+  <div class="hero-header">
+    <h2>{{ hero.name | uppercase }} Details</h2>
+    <img class="hero-image" [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" alt="{{ hero.name }}">
+  </div>
+  
+  <div class="hero-info">
+    <div><span>id: </span>{{ hero.id }}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    </div>
+  </div>
+
+  <div *ngIf="hero.comics">
+    <h3>Cómics:</h3>
+    <ul>
+      <li *ngFor="let comic of hero.comics.items">{{ comic.name }}</li>
+    </ul>
   </div>
 </div>

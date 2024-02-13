@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<h1>Top Heroes</h1>
+<app-hero-search-component (input)="onInputChange($event)"></app-hero-search-component>
+<div class="heroes-menu">
+  <div *ngFor="let hero of heroes" class="hero-card">
+    <a [routerLink]="['/heroe', hero.id]">
+      <img [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" alt="{{ hero.name }}">
+      <div class="hero-name">{{hero.name}}</div>
+    </a>
+  </div>
+</div>
