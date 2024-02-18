@@ -7,11 +7,14 @@ import { HeroService } from '../services/hero.service';
 import { MessageService } from '../services/message.service';
 import { HeroSearchComponentComponent } from '../hero-search-component/hero-search-component.component';
 import { Router, RouterModule } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule, HeroSearchComponentComponent,RouterModule],
+  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule, HeroSearchComponentComponent,RouterModule, MatButtonModule,MatListModule ],
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
   providers: [HeroService]

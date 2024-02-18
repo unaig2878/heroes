@@ -13,7 +13,7 @@
       <td>{{ hero.id }}</td>
       <td>{{ hero.name }}</td>
       <td>
-        <button [routerLink]="['/heroe', hero.id]" [class.selected]="hero === selectedHero" type="button">
+        <button mat-button [routerLink]="['/heroe', hero.id]" [class.selected]="hero === selectedHero">
           View Details
         </button>
       </td>
@@ -22,6 +22,6 @@
 </table>
 
 <div class="pagination-buttons">
-  <button (click)="previousPage()">Previous Page</button>
-  <button (click)="nextPage()">Next Page</button>
+  <button mat-button (click)="previousPage()">Previous Page</button>
+  <button mat-button (click)="nextPage()">Next Page</button>
 </div>
