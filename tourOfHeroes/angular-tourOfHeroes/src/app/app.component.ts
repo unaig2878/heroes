@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeroesComponent, FormsModule, MessagesComponent,HttpClientModule, RouterModule],
+  imports: [CommonModule, RouterOutlet, HeroesComponent, FormsModule, MessagesComponent,HttpClientModule, RouterModule, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

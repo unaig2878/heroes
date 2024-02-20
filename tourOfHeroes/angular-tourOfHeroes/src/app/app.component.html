@@ -1,4 +1,15 @@
-<button routerLink="heroes">Characters</button>
-<button routerLink="dashboard">Dashboard</button>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<link href="https://fonts.cdnfonts.com/css/avengeance" rel="stylesheet">
+<div class="header">
+    <div class="logo-container">
+      <img class="logo" src="../assets/MarvelLogopng.png">
+    </div>
+    <div class="buttons-container">
+      <a routerLink="heroes" routerLinkActive="active" mat-button>Characters</a>
+      <a routerLink="dashboard" routerLinkActive="active" mat-button>Dashboard</a>
+    </div>
+    <div class="login-container">
+      <a routerLink="login" mat-button>Login</a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

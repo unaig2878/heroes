@@ -4,14 +4,16 @@ import { UpperCasePipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../services/hero.service';
-import { MessageService } from '../services/message.service';
 import { HeroSearchComponentComponent } from '../hero-search-component/hero-search-component.component';
 import { Router, RouterModule } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule, HeroSearchComponentComponent,RouterModule],
+  imports: [HeroDetailComponent, UpperCasePipe, NgFor, NgIf, FormsModule, HeroSearchComponentComponent,RouterModule, MatButtonModule,MatListModule,MatTableModule ],
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
   providers: [HeroService]
@@ -31,7 +33,6 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService, 
-    private messageService: MessageService
   ) { };
 
 
@@ -49,8 +50,8 @@ export class HeroesComponent implements OnInit {
         this.getHeroes();
       }
     }
-  onSelect(hero: Hero): void {
+    
+  /*onSelect(hero: Hero): void {
     this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id = ${ hero.id }`);
-  }
+  }*/
 } 

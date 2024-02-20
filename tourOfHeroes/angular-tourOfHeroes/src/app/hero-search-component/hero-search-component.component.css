@@ -1,27 +1,69 @@
-#search-component {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  label {
-    font-size: 1.2rem;
-    color: #3f525c; 
-    margin-right: 10px;
-  }
-  
-  input#hero-search {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #3f525c; 
-    background-color: #3f525c;
-    border-radius: 15px; 
-    width: 300px; 
-    box-sizing: border-box;
-  }
-  
-  input#hero-search:focus {
-    outline: none;
-    border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
-  }
-  
+
+.search-container {
+  background: rgb(42, 40, 40);
+  height: 40px;
+  border-radius: 30px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+              inset -4px -4px 6px 0 rgba(255,255,255,.2),
+              inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+  max-width: 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-container:hover {
+  max-width: 400px; 
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline:none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+  padding: 10px 20px; 
+}
+
+.search-container:hover > .search-input {
+  width: 400px;
+}
+
+.search-container .search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(42, 40, 40);
+}
+
+.search-container .search-btn a {
+  display: inline-flex;
+}
+
+.search-container .search-btn img {
+  height: 40px; 
+  width: 40px; 
+}
+
+.search-container .search-btn .fas {
+  color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+  0% {transform: skew(0deg,0deg);}
+  25% {transform: skew(5deg, 5deg);}
+  75% {transform: skew(-5deg, -5deg);}
+  100% {transform: skew(0deg,0deg);}
+}
+
+.search-container:hover {
+  animation: hoverShake 0.15s linear 3;
+}

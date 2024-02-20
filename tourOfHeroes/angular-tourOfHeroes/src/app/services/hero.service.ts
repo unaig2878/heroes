@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../hero';
-import { MessageService } from '../services/message.service';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Comic } from '../Comic';
 
 
 
@@ -33,6 +33,12 @@ public getHeroe(id: number): Observable<Hero> {
     map(response => response.data.results[0] as Hero)
   );
 }
+public getComics(id: number): Observable<Comic[]> {
+  const url = `${this.baseUrl}characters/${id}/comics?ts=${this.ts}&apikey=${this.apiKey}&hash=${this.hash}`;
+  return this.http.get<ApiResponse>(url).pipe(
+    map(response => response.data.results as Comic[])
+  );
+}
 
 public searchHeroes(name: string): Observable<Hero[]> {
   const url = `${this.baseUrl}characters?nameStartsWith=${name}&ts=${this.ts}&apikey=${this.apiKey}&hash=${this.hash}`;
@@ -56,7 +62,6 @@ interface ApiResponse {
   status: string;
   data: {
     total: number;
-    results: Hero[];
+    results: (Hero | Comic)[]
   };
 }
-

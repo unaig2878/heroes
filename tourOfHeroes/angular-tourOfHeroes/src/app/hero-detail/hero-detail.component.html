@@ -1,21 +1,29 @@
 <div *ngIf="hero" class="wiki-style">
   <div class="hero-header">
     <h2>{{ hero.name | uppercase }} Details</h2>
+    <div class="hero-id"><span>id: </span>{{ hero.id }}</div>
     <img class="hero-image" [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" alt="{{ hero.name }}">
   </div>
   
-  <div class="hero-info">
-    <div><span>id: </span>{{ hero.id }}</div>
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
-    </div>
-  </div>
+ 
 
-  <div *ngIf="hero.comics">
+  <div *ngIf="heroComics">
     <h3>Cómics:</h3>
-    <ul>
-      <li *ngFor="let comic of hero.comics.items">{{ comic.name }}</li>
+    <ul class="comic-list">
+      <li *ngFor="let comic of heroComics" class="comic-item" (click)="showModal(comic)">
+        <div class="comic-title-container">
+          <div class="comic-title">{{ comic.title }}</div>
+        </div>
+        <img class="comic-image" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension">
+      </li>
+      
     </ul>
   </div>
+  
+  <div *ngIf="selectedComic" class="modal" (click)="hideModal()">
+    <img [src]="selectedComic.thumbnail.path + '.' + selectedComic.thumbnail.extension">
+  </div>
+  
+  
 </div>
+<!--<img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension">-->

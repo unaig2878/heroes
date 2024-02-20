@@ -4,7 +4,7 @@ import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../services/hero.service';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -14,7 +14,6 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-  totalHeroes: number = 79;
   limit = 5; 
   currentSearchTerm: string = ''; 
   
